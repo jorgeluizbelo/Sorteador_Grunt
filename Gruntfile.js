@@ -18,8 +18,8 @@ module.exports = function(grunt) {
         },
         watch: {
             less: {
-                files: ['sec/styles/**/*.less'],
-                // tasks: ['less:development']
+                files: ['src/styles/**/*.less'],
+                tasks: ['less:development']
             },
             html: {
                 files: ['src/index.html'],
@@ -100,7 +100,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-uglify')
 
-    // grunt.registerTask('default', ['watch']);
-    grunt.registerTask('default', ['less:development']);
+    grunt.registerTask('default', ['watch']);
+    // grunt.registerTask('default', ['less:development']);
     grunt.registerTask('build', ['less:production', 'htmlmin:dist', 'replace:dist', 'clean', 'uglify']);
 }
